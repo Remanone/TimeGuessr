@@ -66,6 +66,10 @@ time_guessr/
 | D     | Modes de jeu (classique, chrono, daily, duel) | Fait |
 | E     | Systeme de scoring avance (streak, hints)| Fait   |
 
+## Modele Conceptuel de Donnees (MCD)
+
+![MCD TimeGuessr](docs/mcd.svg)
+
 ## Dictionnaire de donnees
 
 ### Table `rounds`

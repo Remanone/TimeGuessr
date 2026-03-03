@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <style>
+      .entity-box { fill: #1b1914; stroke: #c9a84c; stroke-width: 2; rx: 10; }
+      .entity-header { fill: #c9a84c; rx: 10; }
+      .entity-header-clip { fill: #1b1914; }
+      .title-text { fill: #0b0a08; font-weight: 700; font-size: 16px; text-anchor: middle; }
+      .attr-text { fill: #e8e0d0; font-size: 13px; }
+      .attr-pk { fill: #c9a84c; font-weight: 700; font-size: 13px; }
+      .attr-type { fill: #7d7567; font-size: 12px; text-anchor: end; }
+      .relation-diamond { fill: #242018; stroke: #c9a84c; stroke-width: 2; }
+      .relation-text { fill: #e8e0d0; font-weight: 600; font-size: 14px; text-anchor: middle; }
+      .cardinality { fill: #c9a84c; font-weight: 700; font-size: 14px; }
+      .line { stroke: #c9a84c; stroke-width: 2; fill: none; }
+      .bg { fill: #0b0a08; }
+      .subtitle { fill: #7d7567; font-size: 11px; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg" width="900" height="520"/>
+
+  <!-- Title -->
+  <text x="450" y="35" fill="#e8e0d0" font-size="20" font-weight="700" text-anchor="middle">Modele Conceptuel de Donnees — TimeGuessr</text>
+  <text x="450" y="52" class="subtitle">Notation Merise</text>
+
+  <!-- ==================== ENTITY: ROUNDS ==================== -->
+  <rect class="entity-box" x="50" y="80" width="300" height="370"/>
+  <!-- Header -->
+  <rect class="entity-header" x="50" y="80" width="300" height="38"/>
+  <rect class="entity-header-clip" x="50" y="100" width="300" height="20"/>
+  <rect class="entity-header" x="50" y="80" width="300" height="38" style="clip-path: inset(0 0 18px 0 round 10px);"/>
+  <text class="title-text" x="200" y="105">ROUNDS</text>
+  <line x1="50" y1="118" x2="350" y2="118" stroke="#c9a84c" stroke-width="1"/>
+
+  <!-- PK -->
+  <text class="attr-pk" x="70" y="143">id</text>
+  <text class="attr-type" x="330" y="143">INT AUTO_INCREMENT</text>
+  <line x1="65" y1="152" x2="335" y2="152" stroke="#c9a84c" stroke-width="0.5" stroke-dasharray="4,3"/>
+
+  <!-- Attributes -->
+  <text class="attr-text" x="70" y="175">title</text>
+  <text class="attr-type" x="330" y="175">VARCHAR(255)</text>
+
+  <text class="attr-text" x="70" y="200">description</text>
+  <text class="attr-type" x="330" y="200">TEXT</text>
+
+  <text class="attr-text" x="70" y="225">year</text>
+  <text class="attr-type" x="330" y="225">INT [1970-2025]</text>
+
+  <text class="attr-text" x="70" y="250">lat</text>
+  <text class="attr-type" x="330" y="250">DECIMAL(10,6)</text>
+
+  <text class="attr-text" x="70" y="275">lng</text>
+  <text class="attr-type" x="330" y="275">DECIMAL(10,6)</text>
+
+  <text class="attr-text" x="70" y="300">image</text>
+  <text class="attr-type" x="330" y="300">VARCHAR(255)</text>
+
+  <text class="attr-text" x="70" y="325">category</text>
+  <text class="attr-type" x="330" y="325">ENUM</text>
+
+  <text class="attr-text" x="70" y="350">created_at</text>
+  <text class="attr-type" x="330" y="350">DATETIME</text>
+
+  <!-- ==================== ENTITY: SCORES ==================== -->
+  <rect class="entity-box" x="550" y="80" width="300" height="345"/>
+  <!-- Header -->
+  <rect class="entity-header" x="550" y="80" width="300" height="38"/>
+  <rect class="entity-header-clip" x="550" y="100" width="300" height="20"/>
+  <rect class="entity-header" x="550" y="80" width="300" height="38" style="clip-path: inset(0 0 18px 0 round 10px);"/>
+  <text class="title-text" x="700" y="105">SCORES</text>
+  <line x1="550" y1="118" x2="850" y2="118" stroke="#c9a84c" stroke-width="1"/>
+
+  <!-- PK -->
+  <text class="attr-pk" x="570" y="143">id</text>
+  <text class="attr-type" x="830" y="143">INT AUTO_INCREMENT</text>
+  <line x1="565" y1="152" x2="835" y2="152" stroke="#c9a84c" stroke-width="0.5" stroke-dasharray="4,3"/>
+
+  <!-- Attributes -->
+  <text class="attr-text" x="570" y="175">player_name</text>
+  <text class="attr-type" x="830" y="175">VARCHAR(50)</text>
+
+  <text class="attr-text" x="570" y="200">score</text>
+  <text class="attr-type" x="830" y="200">INT</text>
+
+  <text class="attr-text" x="570" y="225">mode</text>
+  <text class="attr-type" x="830" y="225">VARCHAR(20)</text>
+
+  <text class="attr-text" x="570" y="250">difficulty</text>
+  <text class="attr-type" x="830" y="250">VARCHAR(10)</text>
+
+  <text class="attr-text" x="570" y="275">rounds_data</text>
+  <text class="attr-type" x="830" y="275">JSON</text>
+
+  <text class="attr-text" x="570" y="300">played_at</text>
+  <text class="attr-type" x="830" y="300">DATETIME</text>
+
+  <!-- ==================== RELATION: CONCERNE ==================== -->
+  <polygon class="relation-diamond" points="450,230 510,265 450,300 390,265"/>
+  <text class="relation-text" x="450" y="270">Concerne</text>
+
+  <!-- Lines -->
+  <line class="line" x1="350" y1="265" x2="390" y2="265"/>
+  <line class="line" x1="510" y1="265" x2="550" y2="265"/>
+
+  <!-- Cardinalities -->
+  <text class="cardinality" x="358" y="258">1,n</text>
+  <text class="cardinality" x="520" y="258">0,n</text>
+
+  <!-- Legend -->
+  <text x="450" y="480" class="subtitle" font-size="12">Un round (1,n) peut apparaitre dans 0 ou plusieurs scores.</text>
+  <text x="450" y="498" class="subtitle" font-size="12">Un score (0,n) concerne 1 ou plusieurs rounds via le champ JSON rounds_data.</text>
+</svg>
