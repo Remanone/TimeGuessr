@@ -1,0 +1,26 @@
+# Sujet d'examen
+*.pdf
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node (si utilise pour des outils de build)
+node_modules/
+package-lock.json
+
+# PHP
+vendor/
+composer.lock
+
+# Divers
+*.log
+.env
+ed25519*
