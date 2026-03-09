@@ -10,22 +10,26 @@ Jeu web de geolocalisation et datation de photos historiques. Devinez le lieu et
 
 ## Installation et lancement
 
-### 1. Creer la base de donnees et inserer les donnees
+### Option A — script automatique (recommande)
 
 ```bash
-mysql -u root < data/schema.sql
-mysql -u root timeguessr < data/seed.sql
+chmod +x setup.sh && ./setup.sh
 ```
 
-### 2. Lancer le serveur PHP
+### Option B — etape par etape
 
 ```bash
+# 1. Creer la base de donnees et l'utilisateur
+sudo mysql < data/schema.sql
+sudo mysql timeguessr < data/seed.sql
+
+# 2. Lancer le serveur PHP
 php -S localhost:8080
 ```
 
 ### 3. Acceder au jeu
 
-- Jeu : [http://localhost:8080/index.php](http://localhost:8080/index.php)
+- Jeu : [http://localhost:8080](http://localhost:8080)
 - Admin : [http://localhost:8080/admin.php](http://localhost:8080/admin.php) (mot de passe : `timeguessr2025`)
 
 ## Stack technique
@@ -134,5 +138,5 @@ time_guessr/
 La connexion est configuree dans `db.php` :
 - Host : `127.0.0.1`
 - BDD : `timeguessr`
-- User : `root`
-- Password : (vide)
+- User : `timeguessr`
+- Password : `timeguessr`

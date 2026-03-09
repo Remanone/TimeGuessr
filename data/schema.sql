@@ -1,7 +1,10 @@
 -- TimeGuessr : creation de la base de donnees et des tables
--- Usage : mysql -u root < data/schema.sql
+-- Usage : sudo mysql < data/schema.sql
 
 CREATE DATABASE IF NOT EXISTS timeguessr CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE USER IF NOT EXISTS 'timeguessr'@'localhost' IDENTIFIED BY 'timeguessr';
+GRANT ALL PRIVILEGES ON timeguessr.* TO 'timeguessr'@'localhost';
+FLUSH PRIVILEGES;
 USE timeguessr;
 
 -- Table des rounds (photos historiques)
